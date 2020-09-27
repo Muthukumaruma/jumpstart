@@ -1,0 +1,28 @@
+
+@import '../theme.scss';
+.btn-select{
+    display: flex;
+    .radio{
+        display: inline-flex;
+        label{
+            padding: 15px 35px;
+            border: 1px solid #ccc;
+            color: #ccc;
+            cursor: pointer;
+            width: 75px;
+            text-align: center;
+        }
+        &.selected{
+            label{
+                background-color: $primaryColor;
+                border-color: $primaryColor;
+                color: #fff;
+            }
+        }
+        input{
+            position: absolute;
+            opacity: 0;
+        }
+    
+    }
+}

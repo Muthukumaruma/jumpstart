@@ -1,0 +1,127 @@
+@charset "UTF-8";
+@import './theme.scss';
+
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+*::before,
+*::after {
+  box-sizing: inherit;
+  padding: 0px;
+  margin: 0px;
+  -webkit-tap-highlight-color: transparent;
+}
+html {
+    box-sizing: border-box;
+    -ms-overflow-style: scrollbar;
+    height: 100%;
+}
+body{
+    font-size: 14px;
+    font-family: $interFont;
+    font-weight: 400;
+    display: flex;
+    line-height: 1.42857;
+    flex-direction: column;
+    min-height: calc(100vh - #{$navbarHeight});
+    line-height: 1.42857;
+    padding-top: $navbarHeight;
+    background-color: $themeBackground;
+    color: rgba(0,0,0,.87);
+}
+#__next {
+    display: flex;
+    line-height: 1.42857;
+    flex-direction: column;
+    min-height: calc(100vh - #{$navbarHeight});
+  }
+h1,h2,h3,h4,h5,h6{
+    font-family: $fofiaBold;
+    font-weight: normal;
+	font-style: normal;
+}
+h1{
+	font-size: vw-desktop(32px);
+	margin-bottom: vw-desktop(18px);
+}
+
+h2{
+    font-size: vw-desktop(24px);
+	margin-bottom: vw-desktop(12px);
+}
+h3{
+    font-size: vw-desktop(18px);
+	margin-bottom: vw-desktop(9px);
+}
+h4{
+    font-size: vw-desktop(16px);
+	margin-bottom: vw-desktop(8px);
+}
+h4{
+    font-size: vw-desktop(16px);
+	margin-bottom: vw-desktop(8px);
+}
+h5{
+    font-size: vw-desktop(14px);
+	margin-bottom: vw-desktop(7px);
+}
+h6{
+    font-size: vw-desktop(12px);
+	margin-bottom: vw-desktop(6px);
+}
+.row-container {
+    width: 100%;
+    padding: 0px 60px;
+    position: relative;
+}
+.container {
+    width: 100%;
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0px 15px;
+    position: relative;
+    
+    @media (min-width: 992px){
+        width: 970px;
+    }
+    @media (min-width: 768px){
+        width: 750px;
+    }
+    @media (min-width: 1200px){
+        width: 1170px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+}
+.flexbox {
+    display: flex;
+    .box {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+.card{
+    background-color: #fff;
+    position: relative;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 0 1px rgba(0,0,0,.15);
+    padding: 20px;
+    display: flex;
+}
+p{
+    margin-bottom: 15px;
+}
+.error{
+    color: red;
+}
+.success{
+    color: green;
+}

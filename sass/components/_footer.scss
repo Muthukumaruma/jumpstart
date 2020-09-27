@@ -1,0 +1,12 @@
+@import '../theme.scss';
+.footer{
+    margin: auto auto 0 auto;
+    padding: 10px 0px;
+    background-color: $darker;
+    color: #fff;
+    width: 100%;
+    .row-container{
+        text-align: right;
+        width: auto;
+    }
+}

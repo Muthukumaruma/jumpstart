@@ -1,0 +1,10 @@
+@import './variables.scss';
+
+@function vw-desktop($px-vw, $base-vw: $basedesktopWidth){
+    @return ($px-vw * 100vw) / $base-vw
+};
+
+@function vw-mobile($px-vw, $base-vw: $baseMobileWidth){
+    @return ($px-vw * 100vw) / $base-vw
+}      
+  
