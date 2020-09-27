@@ -16,7 +16,7 @@ const Iban = props=>{
                         classNamePrefix="jump"
                         defaultValue={props.selectedCurrency}
                         options={props.currency}
-                        onChange={(e) => {  }}
+                        onChange={(e) => { props.setSelectedCurrency(e.value) }}
                        
                     />
                 </div>

@@ -102,7 +102,7 @@ class Home extends React.Component {
                 </> 
               ):(
                 <>
-                  <Iban selectedCurrency={this.state.selectedCurrency} currency ={this.state.currency}/>
+                  <Iban selectedCurrency={this.state.selectedCurrency} currency ={this.state.currency} setSelectedCurrency={this.setSelectedCurrency} />
                 </>
               )}
             </div>
