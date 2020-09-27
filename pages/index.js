@@ -44,6 +44,9 @@ class Home extends React.Component {
 
   setSelectedCountry = (data)=>{
     this.setState({selectedCountry:data})
+    this.state.countrys.map((country)=>{
+      country.value === data && this.setState({selectedCountry:country})
+    })
   }
 
   setSelectedCurrency = data =>{
@@ -99,7 +102,7 @@ class Home extends React.Component {
                 </> 
               ):(
                 <>
-                  <Iban currency ={this.state.currency}/>
+                  <Iban selectedCurrency={this.state.selectedCurrency} currency ={this.state.currency}/>
                 </>
               )}
             </div>
