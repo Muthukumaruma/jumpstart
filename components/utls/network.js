@@ -13,7 +13,7 @@ const NETWORK = axios.create({
 });
 
 NETWORK.interceptors.request.use(function (config) {
-  
+    debugger
   if(config.url !== 'https://restcountries.eu/rest/v2/all?fields=name;flag;currencies;alpha3Code'){
     const SECRET = publicRuntimeConfig.SECRET_KEY;
     let body = JSON.parse(config.data);

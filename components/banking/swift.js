@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useState, useEffect} from 'react';
 import NETWORK from '../utls/network';
 
 const Swift =(props)=>{
@@ -11,21 +11,20 @@ const Swift =(props)=>{
     const [error, setError] = useState("");
     const [accValid, setaccValid] = useState(false);
     
-    const doSearch = (evt) => {
-        let searchText = evt.target.value; 
-        setSwiftId(evt.target.value.toUpperCase())
-        if(evt.target.value.length == 8 || evt.target.value.length == 11){
+    useEffect(()=>{
+        doSearch(swiftId)
+    },[swiftId])
+
+    const doSearch = (id) => {
+        if(id.length == 8 || id.length == 11){
             if (time ) clearTimeout(time);
-            setTime(()=>{
-                setTimeout(() => {
-                    checkSwift();
-                }, 300);
-            })
+            checkSwift();
         }
         
       }
 
       const checkSwift =()=>{
+          debugger
         NETWORK.post(`v1/banks/find`, JSON.stringify({'swift_bic':swiftId}))
         .then(function(res) {
             res !== undefined ? setBankData(res.data) : setBankData([]);
@@ -58,7 +57,7 @@ const Swift =(props)=>{
             <div className="banking__form-set">
                 <div className="form-control">
                     <label>SWIFT</label>
-                    <input type="text" className="caps" value={swiftId} onChange={(e)=>{doSearch(e)}} />
+                    <input type="text" className="caps" value={swiftId} onChange={(e)=>{setSwiftId(e.target.value.toUpperCase())}} />
                     {Object.keys(bankData).length !== 0 ? (<>
                         <div className="bank-detail">
                             <p>

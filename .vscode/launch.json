@@ -1,0 +1,43 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "type": "chrome",
+        "request": "launch",
+        "name": "Next: Chrome",
+        "url": "http://staging.tvfindia.com:80",
+        "webRoot": "${workspaceFolder}",
+        "runtimeVersion": "12.13.0",
+        "userDataDir": false,
+        "skipFiles": [
+          "${workspaceFolder}/node_modules/**/*.js",
+          "<node_internals>/**/*.js"
+        ]
+      },
+      {
+        "type": "node",
+        "request": "launch",
+        "name": "Next: Node",
+        // "runtimeExecutable": "${workspaceFolder}/server.js",
+        "program": "${workspaceFolder}/server/server.js",
+        "runtimeVersion": "12.13.0",
+        "port": 9229,
+        "env": {
+          "NODE_OPTIONS": "--inspect"
+        },
+        "skipFiles": [
+          "${workspaceFolder}/node_modules/**/*.js",
+          "<node_internals>/**/*.js"
+        ]
+      }
+    ],
+    "compounds": [
+      {
+        "name": "Next: Full",
+        "configurations": [
+          "Next: Node",
+          "Next: Chrome"
+        ]
+      }
+    ]
+  }
